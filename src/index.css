@@ -1,0 +1,344 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a{
+  text-decoration: none !important;
+}
+
+@font-face {
+  font-family: 'gotham_medium';
+  src: url('../public/assets/fonts/gotham-medium.eot');
+  src: url('../public/assets/fonts/gotham-medium.eot?#iefix') format('embedded-opentype'),
+      url('../public/assets/fonts/gotham-medium.woff2') format('woff2'),
+      url('../public/assets/fonts/gotham-medium.woff') format('woff'),
+      url('../public/assets/fonts/gotham-medium.ttf') format('truetype'),
+      url('../public/assets/fonts/gotham-medium.svg#gotham-medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'gotham_black';
+  src: url('../public/assets/fonts/gotham-black');
+  src: url('../public/assets/fonts/gotham-black?#iefix') format('embedded-opentype'),
+      url('../public/assets/fonts/gotham-black.woff2') format('woff2'),
+      url('../public/assets/fonts/gotham-black.woff') format('woff'),
+      url('../public/assets/fonts/gotham-black.ttf') format('truetype'),
+      url('../public/assets/fonts/gotham-black.svg#gotham-black') format('svg');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+html,body{
+  height: 100%;
+  overflow: hidden;
+}
+:root{
+  --ffGothamM:'gotham_medium';
+  --ffGothamB:'gotham_black';
+}
+
+input::-webkit-input-placeholder,
+input::placeholder, textarea::placeholder{
+  color:rgba(89,46,124,.4);
+  opacity: 1;
+  display: block !important;
+}
+.container{
+  padding-left:1rem;
+  padding-right:1rem;
+}
+/* preloader spinner animation */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: conic-gradient(rgba(255, 255, 255, .5) 10%, #4c1480);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #4c1480 0);
+  animation: s3 1s infinite linear;
+}
+@keyframes s3 {
+  100% { transform: rotate(1turn); }
+}
+
+/*======== toastify notification  ========*/
+.Toastify__toast-container .Toastify__toast {
+  background: #592e7c;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  top: 10px;
+  max-width: 80%;
+  margin: auto;
+  font-family:var(--ffGothamB);
+  text-align: center;
+  color: #fff;
+  font-size: 13px;
+}
+.Toastify__toast-container .Toastify__close-button--light {
+  color: #fff;
+  position: relative;
+  right: 10px;
+  top: 5px;
+  opacity: 1;
+}
+
+.listBulletLine li{
+  width: calc(100% / 2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.listBulletLine li .linkLine{
+  width: 100%;
+  height: 3px;
+  border-radius: 20px;
+  background-color: rgba(255,255,255,.3);
+  transition:all .3s linear;
+}
+
+.listBulletLine li .linkLine.activeLine{
+  height: 5px;
+  background-color: rgba(255,255,255);
+}
+
+.verticalScrollbar::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px #7e418c;
+	border-radius: 3px;
+	background-color: #7e418c;
+}
+
+.verticalScrollbar::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: #7e418c;
+  border-radius: 3px;
+}
+
+.verticalScrollbar::-webkit-scrollbar-thumb
+{
+	border-radius: 3px;
+	-webkit-box-shadow: inset 0 0 6px #4c2776;
+	background-color: #fff;
+}
+
+.otpBlock .detailsheadTitle,
+.innerDetails  .detailsheadTitle{
+  color:#592e7c !important;
+}
+
+.customSelect{
+  position: relative; /* Important to position the background image correctly */
+  background: url('../public/assets/images/icon-dropdown.svg') no-repeat 95% center;
+  background-size: 15px; /* Adjust size based on the image size */
+}
+
+.customSelect .fieldSelect {
+  box-shadow: initial !important;
+  outline: none;
+  background-image:initial;
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 30px;
+}
+
+@media (min-width:768px){
+  .detailsBody{
+    background:url(/public/assets/images/bg-gradient.png) no-repeat center / 100% 100%, linear-gradient(118.17deg, #482574 13.19%, #6e1a7e  94.25%);;
+    position: relative;
+    z-index: 1;
+  }
+  .customSelect .form-select,.txtFieldChk,.txtDesc,.tytxtdesc{
+    font-size: 0.73vw;  /*10px*/
+  }
+  .customDatePicker{
+    font-size: 0.88vw; /*12px*/
+  }
+  .fieldInput{
+    font-size:1.09vw !important; /*15px*/
+  }
+  .fieldTextara,.btnStandard{
+    font-size: 1.17vw; /*16px*/
+  } 
+  .travelHeadTitle,.linkNav,.smallHeadTitle{
+    font-size: 1.32vw; /*18px*/
+  }
+  .bigheadTitle{
+    font-size: 1.61vw; /*22px*/
+  }
+  .tyheadTitle{
+    font-size: 2.34vw; /*32px*/
+  }
+}
+@media (max-width:767px){
+  .formRegister{
+    gap: 18px;
+  }
+  .detailsBody{
+    background: linear-gradient(138.56deg, #4C2776 7.91%, #7E418C 63.48%);
+  }
+  .customSelect .form-select,.txtFieldChk,.txtDesc,.tytxtdesc{
+    font-size: 1.58vh !important;  /*10px*/
+  }
+  .customDatePicker{
+    font-size: 1.90vh; /*12px*/
+  }
+  .fieldInput{
+    font-size: 2.39vh !important; /*15*/
+  }
+  .fieldTextara,.btnStandard{
+    font-size: 2.53vh; /*16px*/
+  } 
+  .travelHeadTitle,.linkNav,.smallHeadTitle{
+    font-size: 2.84vh; /*18px*/
+  }
+  .bigheadTitle{
+    font-size: 3.48vh; /*22px*/
+  }
+  .tyheadTitle{
+    font-size: 5.06vh; /*32px*/
+  }
+}
+/* ------------------Best View in Portrait Mobile Mode ------------------- */
+@media  (orientation: landscape) and (min-width : 768px) {
+  .landscapewrapper {
+    display: none;
+  }
+}
+@media  (orientation: landscape) and (max-height : 575px){
+  .landscapewrapper   {
+      display: block;
+  }
+  .welcomeBlock,.thankyouBlock{
+    display: none;
+  }
+}
+@media  (orientation: portrait) and (min-aspect-ratio : 9/16){
+  .landscapewrapper {
+    display: none;
+  }
+}
+@media  (orientation: portrait) and (max-width : 767px){
+   .landscapewrapper   {
+      display: none;
+  }
+}
+/* START >>>>> IPHONE DEVICE */
+/* iphone X , XS, 11 Pro, 12 Mini, 13 Mini, 14 Mini 476ppi */
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .iconTrain{
+    top:-5px !important;
+  }
+  .txtDate,.customDatePicker{
+    top:5px !important;
+  }
+}
+
+/* iphone 12, 12 Pro, 13, 13 Pro, 14, 14 Pro, 14 Pro Max 460ppi */
+@media only screen and (min-device-width: 390px) and (max-device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
+  .iconTrain{
+    top:-10px !important;
+  }
+  .txtDate,.customDatePicker{
+    top:5px !important;
+  }
+}
+
+/* iphone 14 & 15 Pro >> 460ppi  */
+@media only screen and (min-device-width: 393px) and (max-device-height: 852px) and (-webkit-device-pixel-ratio: 3) {
+  .iconTrain{
+    top:-10px !important;
+  }
+  .txtDate,.customDatePicker{
+    top:5px !important;
+  }
+}
+
+
+/* iphone 11 326ppi */
+@media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+  .iconTrain{
+    top:-10px !important;
+  }
+  .txtDate,.customDatePicker{
+    top:5px !important;
+  }
+}
+
+/* iphone XS Max, 11 Pro Max, 12 Pro Max > 458ppi */
+@media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
+  .iconTrain{
+    top:-10px !important;
+  }
+  .txtDate,.customDatePicker{
+    top:5px !important;
+  }
+}
+
+/* iphone X, XS Max, 11 Pro, 11 Pro Max, 12 Pro Max, 13 Pro Max, 14+ > 458ppi */
+@media only screen and (min-device-width: 428px) and (max-device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
+  .iconTrain{
+    top:-10px !important;
+  }
+  .txtDate,.customDatePicker{
+    top:5px !important;
+  }
+}
+
+/* iphone 14 & 15 Pro Max>> 460ppi  */
+@media only screen and (min-device-width: 430px) and (max-device-height: 932px) and (-webkit-device-pixel-ratio: 3) {
+  .iconTrain{
+    top:-10px !important;
+  }
+  .txtDate,.customDatePicker{
+    top:5px !important;
+  }
+}
+
+/* iphone 16 */
+@media only screen 
+  and (min-device-width: 390px) 
+  and (max-device-width: 410px) 
+  and (-webkit-min-device-pixel-ratio: 3) 
+  and (orientation: portrait) {
+    .iconTrain{
+      top:-10px !important;
+    }
+    .txtDate,.customDatePicker{
+      top:5px !important;
+    }
+}
+/* iphone 16 pro  >>  */
+@media only screen 
+  and (min-device-width: 430px) 
+  and (max-device-width: 460px) 
+  and (-webkit-min-device-pixel-ratio: 3) 
+  and (orientation: portrait) {
+  .iconTrain{
+    top:-10px !important;
+  }
+  .txtDate,.customDatePicker{
+    top:5px;
+  }
+}
+/* iphone 16 pro max */
+@media only screen 
+  and (min-device-width: 460px) 
+  and (max-device-width: 500px) 
+  and (-webkit-min-device-pixel-ratio: 3) 
+  and (orientation: portrait) {
+    .iconTrain{
+      top:-10px !important;
+    }
+    .txtDate,.customDatePicker{
+      top:5px !important;
+    }
+}
+/* END >>>>> IPHONE DEVICE */
