@@ -10,8 +10,8 @@ import { DESTINATION_OPTIONS, ORIGIN_OPTIONS } from "../constants/constants";
 import BtnPrimary from "../components/BtnPrimary";
 import FieldSelect from "../components/FieldSelect";
 import Preloader from "../components/Preloader";
-import DatePickerComp from "../components/DatePicker";
 import UseScrollToTop from "../components/ScrollTop";
+import FieldSelectDateComp from "../components/FieldSelectDate";
 
 const Explore = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -21,6 +21,11 @@ const Explore = () => {
     date: "Tue, 03 Oct", // default date or empty if no default
     message: "", // new state field for textarea
   });
+  const navigate = useNavigate();
+
+  const handleNext= () => {
+     navigate('/thankyou')
+  }
 
   UseScrollToTop();
 
@@ -48,44 +53,43 @@ const Explore = () => {
       };
   }, []);
 
-  const navigate = useNavigate(); // Initialize navigate
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Form validation
-    if (!formData.fromOrigin) {
-      toast.error("Please select the 'From' origin.");
-      return;
-    }
+    // // Form validation
+    // if (!formData.fromOrigin) {
+    //   toast.error("Please select the 'From' origin.");
+    //   return;
+    // }
 
-    if (!formData.toOrigin) {
-      toast.error("Please select the 'To' destination.");
-      return;
-    }
+    // if (!formData.toOrigin) {
+    //   toast.error("Please select the 'To' destination.");
+    //   return;
+    // }
 
-    if (!formData.date) {
-      toast.error("Please select a date.");
-      return;
-    }
+    // if (!formData.date) {
+    //   toast.error("Please select a date.");
+    //   return;
+    // }
 
-    if (!formData.message.trim()) {
-      toast.error("Please provide a message.");
-      return;
-    }
+    // if (!formData.message.trim()) {
+    //   toast.error("Please provide a message.");
+    //   return;
+    // }
 
-    // If validation passes
-    setIsLoading(true);
-    toast.success("Form submitted successfully!");
+    // // If validation passes
+    // setIsLoading(true);
+    // toast.success("Form submitted successfully!");
 
-    // Log form data to console
-    console.log("Form Data Submitted:", formData);
+    // // Log form data to console
+    // console.log("Form Data Submitted:", formData);
 
-    // Simulate submission and navigation
-    setTimeout(() => {
-      setIsLoading(false);
-      navigate("/thankyou"); // Navigate to the thank you page
-    }, 1000);
+    // // Simulate submission and navigation
+    // setTimeout(() => {
+    //   setIsLoading(false);
+    //   navigate("/thankyou"); // Navigate to the thank you page
+    // }, 1000);
   };
 
   const handleInputChange = (e) => {
@@ -124,12 +128,12 @@ const Explore = () => {
           />
 
           {/* Datepicker */}
-          <div className="result p-[20px]  flex items-center justify-between border-b-tertiarycolor border-b-[2px]">
-            <p className="text-tertiarycolor justify-center relative cursor-pointer flex items-center font-gotham-medium m-0">
-              <img src="../../public/assets/images/icon-calendar.svg" alt="" className="iconDate w-[20px] h-[20px]  me-[10px]" />
-              <DatePickerComp/>
+          <div className="result  p-[20px]  flex items-center justify-between border-b-tertiarycolor border-b-[2px]">
+            <div className="text-tertiarycolor w-full justify-center relative cursor-pointer flex items-center font-gotham-medium m-0">
+              <img src="../../public/assets/images/icon-calendar.svg" alt="" className="iconDate w-[20px] h-[20px] " />
+              <FieldSelectDateComp/>
               {/* <span className="inline-block txtDate relative ">Tue, 03 Oct</span> */}
-            </p>
+            </div>
           </div>
 
 
@@ -141,7 +145,7 @@ const Explore = () => {
         </div>
 
         <div className="relative mt-[20px] btnBlock flex items-center justify-center">
-          <BtnPrimary>SUBMIT</BtnPrimary>
+          <BtnPrimary onClick={handleNext}>SUBMIT</BtnPrimary>
         </div>
       </form>
       <ToastContainer

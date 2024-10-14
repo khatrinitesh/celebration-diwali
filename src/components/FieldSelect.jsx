@@ -22,21 +22,22 @@ const FieldSelect = ({ label, id, name, options, value, onChange }) => {
       </div>
     </label>
     <div className="customSelect w-full h-full  absolute inset-0 z-[1]">
-      <select
-        id={id}
-        name={name}
-        onChange={onChange}
-        className="fieldSelect form-select w-full relative  appearance-none outline-none bg-transparent border-0 !text-[rgba(89,46,124,.5)] font-gotham-medium  cursor-pointer"
-      >
-        <option value="" disabled selected>
-          {placeholderText}
-        </option>
-        {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
+    <select
+  value={value && ""} // Use value prop to manage the selected option
+  id={id}
+  name={name}
+  onChange={onChange}
+  className="fieldSelect form-select w-full relative appearance-none outline-none bg-transparent border-0 !text-[rgba(89,46,124,.5)] font-gotham-medium cursor-pointer"
+>
+  <option value="" disabled>
+    {placeholderText}
+  </option>
+  {options.map((option) => (
+    <option key={option.value} value={option.value}>
+      {option.label}
+    </option>
+  ))}
+</select>
     </div>
   </div>
   );

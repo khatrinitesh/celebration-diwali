@@ -135,6 +135,24 @@ input::placeholder, textarea::placeholder{
   background-size: 15px; /* Adjust size based on the image size */
 }
 
+.customSelectDate{
+  position: relative; /* Important to position the background image correctly */
+  background: url('../public/assets/images/icon-dropdown.svg') no-repeat 100% center;
+  background-size: 15px; /* Adjust size based on the image size */
+}
+
+.customSelectDate .fieldSelect{
+  background:initial;
+  box-shadow: initial !important;
+  padding-left: 8px;
+  padding-right: 8px;
+  color:#592e7c !important;
+}
+
+.react-datepicker__tab-loop {
+  position: absolute;
+}
+
 .customSelect .fieldSelect {
   box-shadow: initial !important;
   outline: none;

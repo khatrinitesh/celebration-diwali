@@ -7,7 +7,7 @@ import HeadTitle from "../components/HeadTitle";
 import FieldInput from "../components/FieldInput";
 import BtnPrimary from "../components/BtnPrimary";
 
-const Otp = ({ onSubmit }) => {
+const Otp = ({ onSubmit,setActiveStep }) => {
   // Make sure to accept onSubmit as a prop
   const TIMER = 30;
   const [isLoading, setIsLoading] = useState(false);
@@ -54,23 +54,24 @@ const Otp = ({ onSubmit }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Submitted OTP:", otp);
+    setActiveStep(3)
 
-    if (otp === "1234") {
-      try {
-        setIsLoading(true);
-        // Your existing API call...
-        toast.success("Submitted successfully!", {
-          toastId: "submitSuccess",
-        });
-        setIsLoading(false); // Set loading to false before calling onSubmit
-        onSubmit(); // This should call setActiveStep(3) in Details
-      } catch (error) {
-        setIsLoading(false);
-        toast.error("Incorrect OTP Entered");
-      }
-    } else {
-      toast.error("Invalid OTP! Please enter 1234.");
-    }
+    // if (otp === "1234") {
+    //   try {
+    //     setIsLoading(true);
+    //     // Your existing API call...
+    //     toast.success("Submitted successfully!", {
+    //       toastId: "submitSuccess",
+    //     });
+    //     setIsLoading(false); // Set loading to false before calling onSubmit
+    //     onSubmit(); // This should call setActiveStep(3) in Details
+    //   } catch (error) {
+    //     setIsLoading(false);
+    //     toast.error("Incorrect OTP Entered");
+    //   }
+    // } else {
+    //   toast.error("Invalid OTP! Please enter 1234.");
+    // }
   };
 
   return (

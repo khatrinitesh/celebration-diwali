@@ -11,6 +11,7 @@ export default {
         secondarycolor:'#7e418c',
         tertiarycolor:'#592e7c',
         bgmodaloverlay:'rgba(76, 39, 118, .5)',
+        bgadmincolor:'#f3f5f8',
       },
       backgroundImage:{
         btnprimary:'linear-gradient(97.62deg, #482574 3.07%, #81428D 97.66%)',
