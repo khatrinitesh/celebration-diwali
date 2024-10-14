@@ -184,6 +184,12 @@ input::placeholder, textarea::placeholder{
   .detailsBody{
     background: linear-gradient(138.56deg, #4C2776 7.91%, #7E418C 63.48%);
   }
+  .btnBlock{
+    margin-top: 40px;
+  }
+  .fieldTextara{
+    height: 80px;
+  }
   .customSelect .form-select,.txtFieldChk,.txtDesc,.tytxtdesc{
     font-size: 1.58vh !important;  /*10px*/
   }
@@ -204,6 +210,12 @@ input::placeholder, textarea::placeholder{
   }
   .tyheadTitle{
     font-size: 5.06vh; /*32px*/
+  }
+}
+
+@media (max-width:330px){
+  .fieldInput{
+    height: 35px;
   }
 }
 /* ------------------Best View in Portrait Mobile Mode ------------------- */

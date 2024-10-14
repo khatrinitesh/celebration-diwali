@@ -135,12 +135,12 @@ const Explore = () => {
 
           {/* MESSAGE COMMENT */}
           <div className="messageBlock p-[20px]">
-          <textarea ref={textareaRef} placeholder="Why do you want to be home for Diwali?" className="py-[5px] md:py-0 placeholder:text-[rgba(89,46,124,.5)] w-full outline-none overflow-hidden fieldTextara  text-tertiarycolor resize-none font-gotham-medium "  >
+          <textarea ref={textareaRef} rows={2} placeholder="Why do you want to be home for Diwali?" className="md:py-0 placeholder:text-[rgba(89,46,124,.5)] w-full outline-none overflow-hidden fieldTextara  text-tertiarycolor resize-none font-gotham-medium "  >
           </textarea>
           </div>
         </div>
 
-        <div className="relative mt-[20px] flex items-center justify-center">
+        <div className="relative mt-[20px] btnBlock flex items-center justify-center">
           <BtnPrimary>SUBMIT</BtnPrimary>
         </div>
       </form>

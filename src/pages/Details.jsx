@@ -56,16 +56,16 @@ const Details = () => {
           <div className="innerDetails min-h-[100dvh] md:min-h-[410px] 2xl:min-h-[433px] bg-white rounded-tl-[20px] rounded-tr-[20px] md:rounded-[20px] py-[20px] 2xl:py-[40px] px-[24px] md:px-[42px]">
             {/* Step 1: Register */}
             <div
-              className={`step1 ${activeStep === 3 ? "" : "hidden"}`} // Add hidden here
+              className={`step1 ${activeStep === 3? "" : "hidden"}`} // Add hidden here
               id="step1"
             >
               <Register onSubmit={() => setActiveStep(2)} />{" "}
               {/* Pass setActiveStep */}
             </div>
 
-            {/* Step 2: OTP */}
+            {/* Step 2: OTP */} 
             <div
-              className={`step2 ${activeStep === 1 ? "" : "hidden"}`} // Remove hidden here
+              className={`step2 ${activeStep === 2 ? "" : "hidden"}`} // Remove hidden here
               id="step2"
             >
               <Otp onSubmit={() => setActiveStep(3)} />
@@ -73,7 +73,7 @@ const Details = () => {
 
             {/* Step 3: Explore */}
             <div
-              className={`step3 ${activeStep === 2 ? "" : "hidden"}`}
+              className={`step3 ${activeStep === 1  ? "" : "hidden"}`}
               id="step3"
             >
               <Explore />
